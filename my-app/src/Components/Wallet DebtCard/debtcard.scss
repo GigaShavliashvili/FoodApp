@@ -1,0 +1,158 @@
+@use "../../scss/" as *;
+.rightMenu-main {
+  position: relative;
+  min-width: 280px;
+  box-shadow: var(--box-shadow);
+  @include bigtablet {
+    display: none;
+  }
+}
+.rightMenu {
+  position: absolute;
+  left: 0;
+  z-index: 88;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 10px;
+}
+.debitCardContainer {
+  padding: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.debitCard {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  min-width: 265px;
+  min-height: 130px;
+  border-radius: 15px;
+}
+
+.debitCard::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--main-color);
+  transform: rotate(5deg);
+  border-radius: 15px;
+  filter: blur(2px);
+  z-index: -2;
+}
+
+.debitCard::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    35deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.cardGroup {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.cardLogo,
+.cardChip,
+.card_number,
+.card_name,
+.card_from,
+.card_to,
+.card_ring {
+  position: absolute;
+}
+
+.cardLogo {
+  width: 60px;
+  top: 30px;
+  right: 30px;
+  height: auto;
+}
+
+.cardChip {
+  width: 40px;
+  top: 50px;
+  left: 30px;
+  height: auto;
+}
+
+.card_number,
+.card_from,
+.card_to,
+.card_name {
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.card_number {
+  left: 30px;
+  bottom: 60px;
+}
+
+.card_name {
+  font-size: 12px;
+  bottom: 30px;
+  left: 30px;
+}
+
+.card_from {
+  font-size: 12px;
+  bottom: 30px;
+  right: 90px;
+}
+
+.card_to {
+  bottom: 30px;
+  right: 30px;
+  font-size: 12px;
+}
+
+.card_ring {
+  height: 400px;
+  width: 400px;
+  border-radius: 100vw;
+  background: transparent;
+  border: 50px solid rgba(0, 0, 0, 0.1);
+  top: -250px;
+  right: -250px;
+  box-sizing: border-box;
+}
+
+.card_ring::after {
+  content: "";
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  border-radius: 100vw;
+  background: transparent;
+  border: 50px solid rgba(0, 0, 0, 0.1);
+  bottom: -415px;
+  right: -155px;
+  box-sizing: border-box;
+}
+.MonyConteiner {
+  img {
+    width: 100%;
+  }
+}

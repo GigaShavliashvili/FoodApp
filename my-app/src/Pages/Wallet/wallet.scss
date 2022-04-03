@@ -1,0 +1,61 @@
+@use "../../scss/" as *;
+.Section-Wallet {
+  padding: 4rem 0 0rem 0;
+  background-color: var(--main-bg);
+  min-height: 100vh;
+
+  overflow-x: hidden;
+  display: flex;
+  @include tablet {
+    padding: 5rem 0 4rem 0;
+  }
+  @include mobile {
+    padding: 6rem 0 4rem 0;
+  }
+}
+
+.Section-Wallet__Content {
+  width: 100%;
+  height: 100%;
+  margin: 1rem;
+  &__Header {
+    padding: 0 0.5rem 0.5rem 0.5rem;
+  }
+}
+
+.Row1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 20px;
+  & .StatusCard__Wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 20px;
+  }
+  & .apexcharts {
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+  }
+}
+.Row2 {
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+  gap: 20px;
+  color: var(--main-color);
+
+  & .customer-table {
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+  }
+  & .order-table {
+    background: var(--second-bg);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+  }
+}

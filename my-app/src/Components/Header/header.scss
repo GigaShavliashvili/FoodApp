@@ -1,0 +1,71 @@
+@use "../../scss/" as *;
+
+.Header {
+  @include flex(center, center);
+  padding: 0.3rem 1rem;
+  box-shadow: var(--box-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  background: var(--second-bg);
+  @include mobile {
+    padding: 0.1rem 1rem;
+  }
+  &__Logo {
+    flex: 1;
+    img {
+      width: 50px;
+    }
+  }
+  &__Search {
+    flex: 4;
+    &__Wrapper {
+      @include flex(center, center);
+      box-shadow: var(--box-shadow);
+      height: 30px;
+      padding: 0px 10px;
+      border-radius: 30px;
+      input {
+        width: 98%;
+        border: none;
+        outline: none;
+        background: none;
+        color: rgb(175, 175, 175);
+        font-size: 0.95rem;
+      }
+      svg {
+        color: rgb(175, 175, 175);
+      }
+    }
+  }
+  &__Cart {
+    @include flex(center, center);
+    flex: 1;
+    svg {
+      color: rgb(80, 80, 80);
+      font-size: 1.7rem;
+    }
+  }
+  &__Profile {
+    padding-right: 1rem;
+    @include flex(center, center);
+    svg {
+      font-size: 2.5rem;
+      color: rgb(80, 80, 80);
+    }
+    p {
+      color: rgb(255, 255, 255);
+      background: rgb(114, 114, 114);
+      border-radius: 35px;
+      font-size: 14px;
+      padding: 2px 5px;
+    }
+    @include tablet {
+      & .personName {
+        display: none;
+      }
+    }
+  }
+}

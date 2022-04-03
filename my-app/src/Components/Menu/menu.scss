@@ -1,0 +1,75 @@
+@use "../../scss/" as *;
+
+.Category-Menu {
+  width: 100%;
+  padding: 0rem 2rem;
+  @include mobile {
+    padding: 0rem 0.5rem;
+  }
+  &__Header {
+    @include flex(center, space-between);
+  }
+
+  svg {
+    font-size: 15px;
+  }
+  span {
+    color: var(--main-color);
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  &__Wrapper {
+    @include mobile {
+      padding: 1rem;
+    }
+    & .swiper-wrapper {
+      gap: 35px;
+      padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+
+      @include tablet {
+        gap: 20px;
+      }
+      @include mobile {
+        gap: 10px;
+      }
+    }
+
+    & .swiper-slide {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 20px;
+      background: var(--second-bg);
+      box-shadow: var(--box-shadow);
+      z-index: 50;
+      transition: 0.5s ease;
+      cursor: pointer;
+      @include flex(center, center);
+      flex-direction: column;
+      img {
+        width: 25px;
+      }
+      &:hover {
+        background: var(--main-color);
+        color: white;
+        & .btn {
+          background: white;
+          color: $main-color;
+        }
+      }
+    }
+    & .activeMenu {
+      background-color: $main-color;
+      color: white;
+      & .btn {
+        background: white;
+        color: var(--main-color);
+      }
+      img {
+        background: white;
+        border-radius: 50%;
+        width: 40px;
+        padding: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+@use "../../scss/" as *;
+
+.Home-Sidebar {
+  position: fixed;
+  right: 0;
+  top: 4rem;
+  box-shadow: var(--box-shadow);
+  width: 25vw;
+  height: 100vh;
+  padding: 1rem;
+  @include bigtablet {
+    display: none;
+  }
+  &__Image {
+    img {
+      width: 100%;
+      transform: rotate(8deg);
+      @include bigtablet {
+        margin-top: 20px;
+      }
+    }
+  }
+  &__Content {
+    overflow: auto;
+    height: 50vh;
+
+    img {
+      width: 100%;
+      margin-top: 40px;
+    }
+    & .Cart {
+      width: 100%;
+      &__Header {
+        font-size: 80%;
+        @include flex(center, space-between);
+      }
+      svg {
+        font-size: 12px;
+      }
+      & .header-span {
+        margin-right: 5px;
+        color: $main-color;
+        font-size: 15px;
+      }
+
+      &__Item {
+        margin-top: 10px;
+        @include flex(center, unset);
+        width: 100%;
+        color: var(--txt-color);
+        &__Image {
+          width: 50px;
+          height: 50px;
+          overflow: hidden;
+          img {
+            margin: 0;
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &__Content {
+          width: 100%;
+          &__info {
+            @include flex(center, space-between);
+            span {
+              color: var(--main-color);
+            }
+            & .Counter {
+              span {
+                margin: 0px 5px;
+                font-size: 25px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+      & .Total__Wrapper {
+        position: fixed;
+        padding-bottom: 1rem;
+
+        bottom: 0;
+        width: 23vw;
+        & .total {
+          @include flex(center, space-between);
+          color: var(--txt-color);
+        }
+        & .check-out {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

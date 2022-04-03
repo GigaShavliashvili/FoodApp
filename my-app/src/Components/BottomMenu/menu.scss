@@ -1,0 +1,75 @@
+@use "../../scss" as *;
+
+.BottomMemu {
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  left: 0;
+  width: 100vw;
+  @include flex(center, center);
+  &__Wrapper {
+    position: relative;
+    max-width: 36rem;
+    width: 100%;
+    background: var(--second-bg);
+    box-shadow: var(--box-shadow);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    ul {
+      @include flex(center, space-around);
+      gap: 20px;
+      height: 60px;
+      @include mobile {
+        height: 40px;
+      }
+      li {
+        position: relative;
+        & .li__Wrapper {
+          svg {
+            color: var(--main-color);
+            font-size: 2rem;
+            transition: 0.5s ease;
+          }
+        }
+      }
+      .active {
+        position: relative;
+        z-index: 100;
+
+        & .li__Wrapper {
+          svg {
+            color: rgb(255, 255, 255);
+            transform: translateY(-100%);
+          }
+        }
+
+        & .indicator {
+          opacity: 1;
+          height: 75px;
+          width: 75px;
+          left: 50%;
+          top: -50%;
+          @include mobile {
+            height: 60px;
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.indicator {
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  background: var(--main-color);
+  border-radius: 50%;
+  border: 6px solid var(--main-bg);
+  transition: 0.5s ease;
+  z-index: -1;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 0%;
+}

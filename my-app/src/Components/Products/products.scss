@@ -1,0 +1,70 @@
+@use "../../scss/" as *;
+
+.Products {
+  padding: 1rem 2rem;
+  @include tablet {
+    padding: 1rem;
+  }
+  @include mobile {
+    padding: 1rem 0.5rem;
+  }
+  &__Wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 20px;
+    &__Item {
+      background: var(--second-bg);
+      position: relative;
+      box-shadow: var(--box-shadow);
+      border-radius: 20px;
+      margin-top: 3rem;
+      padding: 4rem 0.5rem 0.5rem 0.5rem;
+
+      img {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -40px;
+        position: absolute;
+        width: 100px;
+      }
+
+      .btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
+      & .favorite {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: rgba(204, 0, 0, 0.493);
+      }
+      & .favactive {
+        color: rgb(255, 0, 0);
+      }
+
+      & .Add {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        background: var(--main-color);
+        bottom: 10px;
+        right: 10px;
+        svg {
+          position: unset;
+          color: white;
+        }
+        &:hover {
+          background: var(--main-color);
+        }
+      }
+      span {
+        color: var(--main-color);
+      }
+    }
+  }
+}
+
+.price {
+  color: var(--txt-color);
+}

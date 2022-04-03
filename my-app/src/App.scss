@@ -1,0 +1,102 @@
+@use "./scss/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bebas+Neue&family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Bebas+Neue&family=Shadows+Into+Light&family=Work+Sans:wght@100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  @include tablet {
+    font-size: 80%;
+  }
+  @include mobile {
+    font-size: 60%;
+  }
+}
+
+body {
+  font-weight: $font-Weight;
+  line-height: 1.5;
+  font-family: $font-family1;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: unset;
+  cursor: pointer;
+}
+svg {
+  cursor: pointer;
+}
+
+.light-background {
+  background-color: var(--main-bg-light);
+  color: #000;
+}
+
+.dark-background {
+  background-color: var(--main-bg-dark);
+  color: #fff;
+}
+
+.theme-mode-dark {
+  --main-bg: var(--main-bg-dark);
+  --second-bg: var(--second-bg-dark);
+  --txt-color: var(--txt-color-dark);
+  --box-shadow: var(--box-shadow-dark);
+}
+
+.theme-mode-light {
+  --main-bg: var(--main-bg-light);
+  --second-bg: var(--second-bg-light);
+  --txt-color: var(--txt-color-light);
+  --box-shadow: var(--box-shadow-light);
+}
+.theme-color-blue {
+  --main-color: var(--main-color-blue);
+  --second-color: var(--second-color-blue);
+}
+
+.theme-color-red {
+  --main-color: var(--main-color-red);
+  --second-color: var(--second-color-red);
+}
+
+.theme-color-cyan {
+  --main-color: var(--main-color-cyan);
+  --second-color: var(--second-color-cyan);
+}
+
+.theme-color-green {
+  --main-color: var(--main-color-green);
+  --second-color: var(--second-color-green);
+}
+
+.theme-color-orange {
+  --main-color: var(--main-color-orange);
+  --second-color: var(--second-color-orange);
+}
+
+p {
+  color: var(--txt-color);
+}
+
+h1 {
+  color: var(--txt-color);
+}
+
+h2 {
+  color: var(--txt-color);
+}
+h3 {
+  color: var(--txt-color);
+}
+h4 {
+  color: var(--txt-color);
+}

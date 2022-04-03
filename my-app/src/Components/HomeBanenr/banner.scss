@@ -1,0 +1,45 @@
+@use "../../scss/" as *;
+
+.HomeBanner {
+  color: rgb(75, 75, 75);
+  padding: 1rem 2rem;
+  font-family: $font-family2;
+  @include tablet {
+    padding: 1rem;
+  }
+  &__Wrapper {
+    @include flex(center, space-between);
+    padding: 1rem;
+    position: relative;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-right: 10rem;
+    img {
+      width: 200px;
+      right: -30px;
+      bottom: -10px;
+      position: absolute;
+
+      @include mobile {
+        width: 180px;
+      }
+    }
+
+    &__Content {
+      p {
+        font-size: 14px;
+        color: rgb(163, 163, 163);
+        margin-top: 5px;
+        span {
+          color: $main-color;
+        }
+      }
+      button {
+        margin-top: 5px;
+        font-family: $font-family2;
+      }
+    }
+  }
+}
